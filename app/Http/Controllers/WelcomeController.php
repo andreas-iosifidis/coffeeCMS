@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace   App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product\Product;
 
-class HomeController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -22,9 +22,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
-        $products= Product::select()->orderBy('id','desc')->take(4)->get();
-        return view('home', compact('products'));
+        $products = Product::select()->orderBy('id', 'desc')->take(4)->get();
+        return view('welcome', compact('products'));
     }
 }

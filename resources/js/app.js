@@ -1,8 +1,66 @@
-import './bootstrap';
+import "./bootstrap";
 
-$('#')
+var imagePath = "/assets/images/products/";
+var products = [
+    "americano.jpg",
+    "burger-1.jpg",
+    "capuccino.jpg",
+    "dessert-1.jpg",
+    "dish-1.jpg",
+    "drink-1.jpg",
+    "espresso.jpg",
+    "mocha.jpg",
+];
 
+var welcome_gallery_section_hooks = document
+    .getElementById("gallery-welcome")
+    .querySelectorAll("a");
 
+function imageCarousel() {
+    let index = 0;
+    let i = 0;
+
+    setInterval(function () {
+        welcome_gallery_section_hooks[0].style.backgroundImage =
+            "url('" + imagePath + products[index % products.length] + "')";
+        welcome_gallery_section_hooks[0].style.borderRadius = "25px";
+        welcome_gallery_section_hooks[0].style.border = "solid white 1px ";
+
+        welcome_gallery_section_hooks[1].style.backgroundImage =
+            "url('" +
+            imagePath +
+            products[(index + 1) % products.length] +
+            "')";
+        welcome_gallery_section_hooks[1].style.borderRadius = "25px";
+        welcome_gallery_section_hooks[1].style.border = "solid white 1px ";
+
+        welcome_gallery_section_hooks[2].style.backgroundImage =
+            "url('" +
+            imagePath +
+            products[(index + 2) % products.length] +
+            "')";
+        welcome_gallery_section_hooks[2].style.borderRadius = "25px";
+        welcome_gallery_section_hooks[2].style.border = "solid white 1px ";
+
+        welcome_gallery_section_hooks[3].style.backgroundImage =
+            "url('" +
+            imagePath +
+            products[(index + 3) % products.length] +
+            "')";
+        welcome_gallery_section_hooks[3].style.borderRadius = "25px";
+        welcome_gallery_section_hooks[3].style.border = "solid white 1px ";
+        index++;
+
+        if (index > products.length) {
+            index = 0;
+        }
+    }, 5000);
+}
+Window.onload = imageCarousel();
+
+// $(document).ready(function () {
+//     imageCarousel;
+// });
 
 /*
  <div class="book p-4">

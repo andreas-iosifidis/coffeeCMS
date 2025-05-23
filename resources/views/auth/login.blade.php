@@ -2,85 +2,86 @@
 
 @section('content')
 <div class="container">
-            <div class="row slider-text justify-content-center align-items-center">
+    <div class="row slider-text justify-content-center align-items-center">
 
-                <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> 
-                    <span>{{">"}}</span>
-                    <span>Login</span></p>
-                </div>
-
-            </div>
+        <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span>
+                <span>{{">"}}</span>
+                <span>Login</span>
+            </p>
         </div>
 
-<section class="home-slider owl-carousel">
-<div class="slider-item" style="background-image: url({{ asset('assets/images/bg_login.jpg') }});" >
+    </div>
+</div>
+
+<section class="login-page">
+    <div class="slider-item" style="background-image: url( {{ asset('assets/images/background/bg_login.jpg') }} );">
         <div class="overlay"></div>
         <section class="ftco-section">
-    <div class="container" style="margin-top:-2%; margin-left: 0%;">
-        <div >
-            <div class="col-md-7 ftco-animate">
-                <form method="POST" action="{{ route('login') }}" class="billing-form  p-3 p-md-5">
-                    @csrf
-                    <h3 class="mb-4 billing-heading">Login</h3>
-                    <div class="row align-items-end">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="Email">{{ __('Email Address') }}</label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="Password">{{ __('Password') }}</label>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Password">
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group mt-4">
-                                <div class="radio d-flex">
-                                    <button type="submit" class="btn btn-primary py-3 px-4 ">{{__('Login')}}</button>
-                                    <div class="flex-column me-auto">
-                                        @if (Route::has('password.request'))
-                                        <a class="btn btn-link float-start" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                        @endif
-                                        <div class="form-check" style="margin-left:7%;">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                            <label for="remember">
-                                                {{ __('Remember Me') }}
-                                            </label>
-                                        </div>
+            <div class="container" style="margin-top:-2%; margin-left: 0%;">
+                <div>
+                    <div class="col-md-7 ftco-animate">
+                        <form method="POST" action="{{ route('login') }}" class="billing-form  p-3 p-md-5">
+                            @csrf
+                            <h3 class="mb-4 billing-heading">Login</h3>
+                            <div class="row align-items-end">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Email">{{ __('Email Address') }}</label>
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                 </div>
 
-                            </div>
-                        </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Password">{{ __('Password') }}</label>
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Password">
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group mt-4">
+                                        <div class="radio d-flex">
+                                            <button type="submit" class="btn btn-primary py-3 px-4 ">{{__('Login')}}</button>
+                                            <div class="flex-column me-auto">
+                                                @if (Route::has('password.request'))
+                                                <a class="btn btn-link float-start" href="{{ route('password.request') }}">
+                                                    {{ __('Forgot Your Password?') }}
+                                                </a>
+                                                @endif
+                                                <div class="form-check" style="margin-left:7%;">
+                                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                                    <label for="remember">
+                                                        {{ __('Remember Me') }}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
 
 
 
-                </form><!-- END -->
-            </div> <!-- .col-md-8 -->
-        </div>
-    </div>
+                        </form><!-- END -->
+                    </div> <!-- .col-md-8 -->
+                </div>
+            </div>
     </div>
 </section>
-        
-    </div>
+
+</div>
 </section>
 
 

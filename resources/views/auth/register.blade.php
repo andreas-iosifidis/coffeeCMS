@@ -14,8 +14,8 @@
             </div>
         </div>
 
-<section class="home-slider owl-carousel">
-<div class="slider-item" style="background-image: url({{ asset('assets/images/bg_login.jpg') }});" >
+<section class="register-page">
+<div class="slider-item" style="background-image: url({{ asset('assets/images/background/bg_login.jpg') }});" >
         <div class="overlay"></div>
         <section class="ftco-section">
     <div class="container" style="margin-top:-2%; margin-left: 0%;">

@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="home-slider owl-carousel">
-  <div class="slider-item" style="background-image: url({{asset('assets/images/bg_1.jpg')}});"> 
+  <div class="slider-item" style="background-image: url({{asset('assets/images/background/bg_1.jpg')}});"> 
     <div class="overlay"></div>
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="slider-item" style="background-image: url({{asset('assets/images/bg_2.jpg')}});"> 
+  <div class="slider-item" style="background-image: url({{asset('assets/images/background/bg_2.jpg')}});"> 
     <div class="overlay"></div>
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div class="slider-item" style="background-image: url({{asset('assets/images/bg_3.jpg')}});"> 
+  <div class="slider-item" style="background-image: url({{asset('assets/images/background/bg_3.jpg')}});"> 
     <div class="overlay"></div>
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <div class="slider-item" style="background-image: url({{asset('asset/images/bg_4.jpg')}});"> 
+  <div class="slider-item" style="background-image: url({{asset('asset/images/background/bg_4.jpg')}});"> 
     <div class="overlay"></div>
     <div class="container">
       <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -139,92 +139,6 @@
   </div>
 </section>
 
-<section class="ftco-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 pr-md-5">
-        <div class="heading-section text-md-right ftco-animate">
-          <span class="subheading">Discover</span>
-          <h2 class="mb-4">Our Menu</h2>
-          <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="menu-entry">
-              <a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="menu-entry mt-lg-4">
-              <a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="menu-entry">
-              <a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="menu-entry mt-lg-4">
-              <a href="#" class="img" style="background-image: url(images/menu-4.jpg);"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 text-center">
-              <div class="text">
-                <div class="icon"><span class="flaticon-coffee-cup"></span></div>
-                <strong class="number" data-number="100">0</strong>
-                <span>Coffee Branches</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 text-center">
-              <div class="text">
-                <div class="icon"><span class="flaticon-coffee-cup"></span></div>
-                <strong class="number" data-number="85">0</strong>
-                <span>Number of Awards</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 text-center">
-              <div class="text">
-                <div class="icon"><span class="flaticon-coffee-cup"></span></div>
-                <strong class="number" data-number="10567">0</strong>
-                <span>Happy Customer</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 text-center">
-              <div class="text">
-                <div class="icon"><span class="flaticon-coffee-cup"></span></div>
-                <strong class="number" data-number="900">0</strong>
-                <span>Staff</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="ftco-section">
   <div class="container">
@@ -236,171 +150,25 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      
+    @foreach($products as $product)
+    
+    <div class="col-md-3">
         <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
+          <a href="#" class="img" style="background-image: url({{ asset('assets/images/products/'.$product->image.'') }});"></a>
           <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>A small river named Duden flows by their place and supplies</p>
-            <p class="price"><span>$5.90</span></p>
-            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+            <h3><a href="{{ route('product.single', $product->id); }}">{{$product->name}}</a></h3>
+            <p>{{$product->description}}</p>
+            <p class="price"><span>{{$product->price}}&#8364</span></p>
+            <p><a href="{{ route('product.single', $product->id); }}" class="btn btn-primary btn-outline-primary">Show</a></p>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
-          <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>A small river named Duden flows by their place and supplies</p>
-            <p class="price"><span>$5.90</span></p>
-            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
-          <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>A small river named Duden flows by their place and supplies</p>
-            <p class="price"><span>$5.90</span></p>
-            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="menu-entry">
-          <a href="#" class="img" style="background-image: url(images/menu-4.jpg);"></a>
-          <div class="text text-center pt-4">
-            <h3><a href="#">Coffee Capuccino</a></h3>
-            <p>A small river named Duden flows by their place and supplies</p>
-            <p class="price"><span>$5.90</span></p>
-            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="ftco-gallery">
-  <div class="container-wrap">
-    <div class="row no-gutters">
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-3 ftco-animate">
-        <a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
-          <div class="icon mb-4 d-flex align-items-center justify-content-center">
-            <span class="icon-search"></span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+    @endforeach
+     
 </section>
 
 
-
-<section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-7 heading-section text-center ftco-animate">
-        <span class="subheading">Testimony</span>
-        <h2 class="mb-4">Customers Says</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-      </div>
-    </div>
-  </div>
-  <div class="container-wrap">
-    <div class="row d-flex no-gutters">
-      <div class="col-lg align-self-sm-end ftco-animate">
-        <div class="testimony">
-          <blockquote>
-            <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small.&rdquo;</p>
-          </blockquote>
-          <div class="author d-flex mt-4">
-            <div class="image mr-3 align-self-center">
-              <img src="images/person_1.jpg" alt="">
-            </div>
-            <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg align-self-sm-end">
-        <div class="testimony overlay">
-          <blockquote>
-            <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
-          </blockquote>
-          <div class="author d-flex mt-4">
-            <div class="image mr-3 align-self-center">
-              <img src="images/person_2.jpg" alt="">
-            </div>
-            <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg align-self-sm-end ftco-animate">
-        <div class="testimony">
-          <blockquote>
-            <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name. &rdquo;</p>
-          </blockquote>
-          <div class="author d-flex mt-4">
-            <div class="image mr-3 align-self-center">
-              <img src="images/person_3.jpg" alt="">
-            </div>
-            <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg align-self-sm-end">
-        <div class="testimony overlay">
-          <blockquote>
-            <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however.&rdquo;</p>
-          </blockquote>
-          <div class="author d-flex mt-4">
-            <div class="image mr-3 align-self-center">
-              <img src="images/person_2.jpg" alt="">
-            </div>
-            <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg align-self-sm-end ftco-animate">
-        <div class="testimony">
-          <blockquote>
-            <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name. &rdquo;</p>
-          </blockquote>
-          <div class="author d-flex mt-4">
-            <div class="image mr-3 align-self-center">
-              <img src="images/person_3.jpg" alt="">
-            </div>
-            <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 @endsection

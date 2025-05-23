@@ -7278,7 +7278,7 @@ body {
   line-height: 1.8;
   font-weight: 300;
   color: gray;
-  background: url(../images/bg_4.jpg) no-repeat fixed;
+  background: url(../images/background/bg_4.jpg) no-repeat fixed;
   background-size: cover; }
   body.menu-show {
     overflow: hidden;
@@ -7640,6 +7640,11 @@ h1, h2, h3, h4, h5,
             border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
             .owl-carousel.home-slider .slider-item .slider-text .breadcrumbs span a {
               color: #fff; }
+    .slider-text .breadcrumbs{
+      text-transform: uppercase;
+          font-size: 13px;
+          letter-spacing: 1px; 
+    }
     .owl-carousel.home-slider .owl-nav .owl-prev span,
     .owl-carousel.home-slider .owl-nav .owl-next span {
       color: #fff; }
@@ -7986,6 +7991,9 @@ h1, h2, h3, h4, h5,
   .menu-entry .text h3 {
     font-size: 18px;
     text-transform: uppercase; }
+  .menu-entry .text p{
+    color:#fff3cd;
+  }
     .menu-entry .text h3 a {
       color: #fff; }
   .menu-entry .text .price span {
@@ -7993,8 +8001,13 @@ h1, h2, h3, h4, h5,
     font-size: 18px; }
 
 .product-details h3 {
+  color: white;
   text-transform: uppercase;
   font-size: 34px; }
+
+.product-details p{
+  color:#fff3cd;
+}
 
 .product-details .price span {
   font-size: 30px;
@@ -8781,15 +8794,16 @@ textarea.form-control {
 
 #section-counter {
   position: relative;
-  z-index: 0; }
+  z-index: 0;
+  opacity: 1 }
   #section-counter .overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #000;
-    opacity: .5; }
+    background-color: transparent;
+     }
 
 .ftco-counter {
   padding: 7em 0; }
@@ -9301,3 +9315,44 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+.login-page, .register-page, .product-details{
+  position: relative;
+    height: 1000px;
+    background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      
+    z-index: 0;
+    
+}
+
+.login-page .slider-item{
+  position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        opacity: .9;
+        height: 1000px;
+        z-index: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+}
+
+.register-page .slider-item{
+  position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        opacity: .9;
+        height: 1000px;
+        z-index: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+}
