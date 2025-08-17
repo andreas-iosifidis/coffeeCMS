@@ -493,6 +493,8 @@ pre {
   margin-right: -15px;
   margin-left: -15px; }
 
+
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0; }
@@ -9355,4 +9357,20 @@ textarea.form-control {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+}
+
+.left-container{
+  position:relative;
+  margin-top: 10%;
+  margin-left: 10%;
+  height: 40%;
+  width: 40%;
+}
+
+.right-container{
+  position:relative;
+  margin-top: 10%;
+  margin-right: 10%;
+  height: 40%;
+  width: 40%;
 }

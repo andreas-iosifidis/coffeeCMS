@@ -25,3 +25,5 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name(
 
 //products
 Route::get('products/product-single/{id}', [App\Http\Controllers\Products\ProductsController::class, 'singleProduct'])->name('product.single');
+Route::post('products/product-single/{id}', [App\Http\Controllers\Products\ProductsController::class, 'addToCart'])->name('add.cart');
+Route::get('products/cart', [App\Http\Controllers\Products\ProductsController::class, 'cart'])->name('cart');

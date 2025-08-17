@@ -146,7 +146,7 @@
       <div class="col-md-7 heading-section ftco-animate text-center">
         <span class="subheading">Discover</span>
         <h2 class="mb-4">Best Coffee Sellers</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <p>Savor the rich, aromatic delight of our expertly-crafted coffee, a moment of blissful indulgence in every sip.</p>
       </div>
     </div>
     <div class="row">

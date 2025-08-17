@@ -15,8 +15,11 @@
 
 	</div>
 </div>
-
-
+<div class="container">
+@if(Session::has('success'))
+<p class="alert {{Session::get('alert-class','alert-info')}}">{{Session::get('success')}}</p>
+@endif
+</div>
 
 <section class="ftco-section">
 	<div class="container">
@@ -34,7 +37,11 @@
 					<div class="col-md-6">
 						<div class="form-group d-flex">
 							<div class="select-wrap">
-								<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+								<div class="icon">
+									
+									
+									<img src="{{asset('assets/images/arrow-down.svg')}}">
+								</div>
 								<select name="quantity" id="product-quantity" class="form-control">
 									<option value="small">Small</option>
 									<option value="medium">Medium</option>
@@ -59,7 +66,16 @@
 						</span>
 					</div>
 				</div>
-				<p><a href="cart.html" class="btn btn-primary py-3 px-5">Add to Cart</a></p>
+				<form method="POST" action="{{route('add.cart',$product->id)}}">
+					@csrf
+					<input type="hidden" name="name" value="{{$product->name}}">
+					<input type="hidden" name="prd_id" value="{{$product->id}}">
+					<input type="hidden" name="price" value="{{$product->price}}">
+					@if($checkingInCart==0)
+					<button type="submit" name="cart_submit" class="btn btn-primary py-3 px-5">Add to Cart</button>
+					@else
+					<button style="background-color: black" class="text-white btn btn-primary py-3 px-5" disabled>Added to Cart</button>
+					@endif
 			</div>
 		</div>
 	</div>
@@ -74,8 +90,9 @@
 				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 			</div>
 		</div>
-		@foreach ($relatedProducts as $relatedProduct)
 		<div class="row">
+		@foreach ($relatedProducts as $relatedProduct)
+		
 			<div class="col-md-3">
 				<div class="menu-entry">
 					<a href="#" class="img" style="background-image: url({{ asset('assets/images/products/'.$relatedProduct->image.'') }});"></a>
@@ -88,9 +105,9 @@
 				</div>
 			</div>
 			
-		</div>
-		@endforeach
 		
+		@endforeach
+	</div>
 	</div>
 </section>
 
